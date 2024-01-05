@@ -58,21 +58,34 @@ class LinkedList:
             self.tail = None
 
         return temp.value
+    
+    def prepend(self, value):
+        new_node = Node(value)
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        
+        self.length += 1
+        return True
 
 
 
-my_linked_list = LinkedList(33)
-my_linked_list.append(2)
+my_linked_list = LinkedList(2)
+my_linked_list.append(3)
 
 # my_linked_list.print_list()
 
 # it will return my second node (last one in the linked list)
-print(my_linked_list.pop())
+# print(my_linked_list.pop())
 
 # it will return my first node (actually last)
-print(my_linked_list.pop())
+# print(my_linked_list.pop())
 
 # it will return None
-print(my_linked_list.pop())
+# print(my_linked_list.pop())
 
-
+my_linked_list.prepend(1)
+my_linked_list.print_list()
