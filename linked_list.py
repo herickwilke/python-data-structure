@@ -40,11 +40,39 @@ class LinkedList:
         self.length += 1
         return True
 
+    def pop(self):
+        if self.length == 0:
+            return None
+        temp = self.head
+        pre = self.head
+
+        while(temp.next):
+            pre = temp
+            temp = temp.next
+        
+        self.tail = pre
+        self.tail.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.head = None
+            self.tail = None
+
+        return temp.value
+
+
 
 my_linked_list = LinkedList(33)
-
 my_linked_list.append(2)
 
-my_linked_list.print_list()
+# my_linked_list.print_list()
+
+# it will return my second node (last one in the linked list)
+print(my_linked_list.pop())
+
+# it will return my first node (actually last)
+print(my_linked_list.pop())
+
+# it will return None
+print(my_linked_list.pop())
 
 
