@@ -90,14 +90,25 @@ class LinkedList:
             temp = temp.next
         return temp
     
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
 
 my_linked_list = LinkedList(0)
 my_linked_list.append(1)
 my_linked_list.append(2)
 my_linked_list.append(3)
 
-print(my_linked_list.get(2))
+my_linked_list.set_value(1, 224)
 
+my_linked_list.print_list()
+
+
+# print(my_linked_list.get(2))
 
 # my_linked_list = LinkedList(2)
 # my_linked_list.append(3)
