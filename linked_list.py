@@ -98,7 +98,7 @@ class LinkedList:
         return False
     
     def insert(self, index, value):
-        if index < 0 or index > self.length:
+        if index < 0 or index >= self.length:
             return False
         if index == 0:
             return self.prepend(value)
@@ -112,7 +112,7 @@ class LinkedList:
         return True
     
     def remove(self, index):
-        if index < 0 or index > self.length:
+        if index < 0 or index >= self.length:
             return None
         if index == 0:
             return self.pop_first()
